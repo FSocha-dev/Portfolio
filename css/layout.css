@@ -1,17 +1,16 @@
 
-/* --- Tło strony (gradient + obraz) --- */
 body {
   background: linear-gradient(to bottom, #0a0a0a, #141414);
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
 }
-
-/* --- Główny nagłówek (hero section) --- */
+ 
+/* Główny nagłówek (hero section) */
 header#home {
   position: relative;
   width: 100%;
-  height: 100vh; /* Pełna wysokość okna */
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -43,13 +42,15 @@ header#home {
   font-weight: 500;
 }
 
-/* --- Nawigacja --- */
+/* Nawigacja */
 #nav-wrap {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(10, 10, 10, 0.9);
+  background: transparent;
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   padding: 15px 0;
   z-index: 1000;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -75,7 +76,7 @@ header#home {
   color: #00b8ff;
 }
 
-/* --- Ikony mediów społecznościowych --- */
+/* Ikony mediów społecznościowych */
 .social {
   list-style: none;
   display: flex;
@@ -94,7 +95,7 @@ header#home {
   color: #00b8ff;
 }
 
-/* --- Sekcja About --- */
+/* Sekcja About */
 #about {
   padding: 80px 0;
   background: #101010;
@@ -114,31 +115,21 @@ header#home {
   margin: 0 auto;
   line-height: 1.8;
 }
-
-/* --- Stopka --- */
-footer {
-  background: #0a0a0a;
-  color: #777;
-  padding: 40px 0;
-  text-align: center;
-  font-size: 0.9rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-footer a {
-  color: #00b8ff;
-  text-decoration: none;
-}
-
-footer a:hover {
-  text-decoration: underline;
+.profile-pic {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #00b8ff;
+  display: block;
+  margin: 0 auto;
 }
 
 /* Sekcja Resume / Education */
 #resume {
   background: #0d0d0d;
   padding: 80px 0;
-  text-align: center; /* Wysrodkowanie tekstu */
+  text-align: center; 
 }
 
 #resume .header-col h1 span {
@@ -161,4 +152,109 @@ footer a:hover {
 
 #resume .info {
   color: #bbb;
+}
+
+/* Sekcja Interests */
+#interests {
+  background-color: #141414;
+  padding: 80px 0;
+  text-align: center;
+}
+
+#interests h1 {
+  color: #00b8ff;
+  margin-bottom: 40px;
+}
+
+#interests img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+#interests img:hover {
+  transform: scale(1.03);
+}
+
+/* Sekcja Contacts */
+#contact {
+  background: #0d0d0d;
+  padding: 80px 0;
+  text-align: center;
+}
+
+#contact h1 {
+  color: #00b8ff;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+#contact .address span {
+  display: block;
+  color: #ccc;
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+#contact .contact-message {
+  margin-top: 15px;
+  color: #aaa;
+  font-size: 0.95rem;
+}
+
+/* Stopka */
+footer {
+  background: #0d0d0d;
+  text-align: center;
+  padding: 40px 0;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+footer a {
+  color: #00b8ff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.social-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.social-links i {
+  font-size: 1.4rem;
+  color: #00b8ff;
+  transition: color 0.3s ease;
+}
+
+.social-links i:hover {
+  color: #fff;
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  #nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .profile-pic {
+    width: 120px;
+    height: 120px;
+  }
+
+  #about p {
+    padding: 0 15px;
+  }
 }
