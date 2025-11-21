@@ -1,4 +1,3 @@
-
 body {
   background: linear-gradient(to bottom, #0a0a0a, #141414);
   background-attachment: fixed;
@@ -98,7 +97,7 @@ header#home {
 /* Sekcja About */
 #about {
   padding: 80px 0;
-  background: #101010;
+  background: #0d0d0d;
   text-align: center;
 }
 
@@ -125,7 +124,7 @@ header#home {
   margin: 0 auto;
 }
 
-/* Sekcja Resume / Education */
+/* Sekcja Resume */
 #resume {
   background: #0d0d0d;
   padding: 80px 0;
@@ -156,7 +155,7 @@ header#home {
 
 /* Sekcja Interests */
 #interests {
-  background-color: #141414;
+  background-color: #0d0d0d;
   padding: 80px 0;
   text-align: center;
 }
@@ -164,16 +163,46 @@ header#home {
 #interests h1 {
   color: #00b8ff;
   margin-bottom: 40px;
+  font-size: 2rem;
+}
+
+#interests-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+#interests .interests-item {
+  width: 220px;
+  margin-bottom: 40px;
+}
+
+#interests .item-wrap {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
 }
 
 #interests img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 10px;
   transition: transform 0.3s ease;
 }
 
 #interests img:hover {
-  transform: scale(1.03);
+  transform: scale(1.05);
+}
+
+#interests .interests-item-meta h5 {
+  margin-top: 10px;
+  color: #ccc;
+  font-weight: 400;
 }
 
 /* Sekcja Contacts */
