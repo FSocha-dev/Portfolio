@@ -122,25 +122,25 @@ header span {
   color: #bbb;
 }
 
-/* ====== Sekcja Portfolio ====== */
-#portfolio {
+/* ====== Sekcja Interests ====== */
+#interests {
   background-color: #141414;
   padding: 80px 0;
   text-align: center;
 }
 
-#portfolio h1 {
+#interests h1 {
   color: #00b8ff;
   margin-bottom: 40px;
 }
 
-#portfolio img {
+#interests img {
   width: 100%;
   border-radius: 10px;
   transition: transform 0.3s ease;
 }
 
-#portfolio img:hover {
+#interests img:hover {
   transform: scale(1.03);
 }
 

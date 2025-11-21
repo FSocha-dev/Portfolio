@@ -1,0 +1,164 @@
+
+/* --- Tło strony (gradient + obraz) --- */
+body {
+  background: linear-gradient(to bottom, #0a0a0a, #141414);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* --- Główny nagłówek (hero section) --- */
+header#home {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Pełna wysokość okna */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
+              url('../images/mountains_photo.jpg') center center / cover no-repeat;
+  color: white;
+}
+
+.banner-text h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+  text-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
+}
+
+.banner-text h3 {
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.banner-text span {
+  color: #00b8ff;
+  font-weight: 500;
+}
+
+/* --- Nawigacja --- */
+#nav-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(10, 10, 10, 0.9);
+  padding: 15px 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#nav {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+#nav li a {
+  text-decoration: none;
+  color: #ccc;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+#nav li a:hover,
+#nav li.current a {
+  color: #00b8ff;
+}
+
+/* --- Ikony mediów społecznościowych --- */
+.social {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.social i {
+  font-size: 1.4rem;
+  color: #ccc;
+  transition: color 0.3s ease;
+}
+
+.social i:hover {
+  color: #00b8ff;
+}
+
+/* --- Sekcja About --- */
+#about {
+  padding: 80px 0;
+  background: #101010;
+  text-align: center;
+}
+
+#about h2 {
+  color: #00b8ff;
+  font-size: 2rem;
+  margin-bottom: 25px;
+}
+
+#about p {
+  color: #ccc;
+  font-size: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* --- Stopka --- */
+footer {
+  background: #0a0a0a;
+  color: #777;
+  padding: 40px 0;
+  text-align: center;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+footer a {
+  color: #00b8ff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Sekcja Resume / Education */
+#resume {
+  background: #0d0d0d;
+  padding: 80px 0;
+  text-align: center; /* Wysrodkowanie tekstu */
+}
+
+#resume .header-col h1 span {
+  color: #00b8ff;
+}
+
+#resume .main-col {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#resume .item {
+  margin-bottom: 40px;
+}
+
+#resume h3 {
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+#resume .info {
+  color: #bbb;
+}
