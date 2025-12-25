@@ -304,22 +304,24 @@ footer a:hover {
 
   /* NAV */
   #nav-wrap {
-    padding: 10px 0;
+    padding: 18px 0;
+    background: rgba(0, 0, 0, 0.9); 
   }
 
   #nav {
     flex-direction: column;
-    gap: 10px;
+    gap: 14px;
   }
 
   #nav li a {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
+    padding: 6px 0;
   }
 
   /* HOME / HERO */
   header#home {
     justify-content: flex-start;
-    padding-top: 120px;
+    padding-top: 130px;
     padding-left: 16px;
     padding-right: 16px;
   }
