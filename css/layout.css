@@ -304,19 +304,19 @@ footer a:hover {
 
   /* NAV */
   #nav-wrap {
-    padding: 28px 0;
+    padding: 22px 0;
     background: rgba(0, 0, 0, 0.9); 
   }
 
   #nav {
     flex-direction: column;
-    gap: 18px;
+    gap: 14px;
   }
 
   #nav li a {
-    font-size: 1.5rem;
-    padding: 12px 0;
-    line-height: 1.4; 
+    font-size: 1.4rem;
+    padding: 10px 0;
+    line-height: 1.2; 
   }
 
   /* HOME / HERO */
