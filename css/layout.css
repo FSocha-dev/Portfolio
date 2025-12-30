@@ -65,7 +65,7 @@ header#home {
 #nav li a {
   text-decoration: none;
   color: #ccc;
-  font-size: 0.95rem;
+  font-size: 1.95rem;
   letter-spacing: 1px;
   transition: color 0.3s ease;
 }
