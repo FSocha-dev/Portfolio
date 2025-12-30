@@ -304,17 +304,17 @@ footer a:hover {
 
   /* NAV */
   #nav-wrap {
-    padding: 22px 0;
+    padding: 18px 0;
     background: rgba(0, 0, 0, 0.9); 
   }
 
   #nav {
     flex-direction: column;
-    gap: 14px;
+    gap: 12px;
   }
 
   #nav li a {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     padding: 10px 0;
     line-height: 1.2; 
   }
