@@ -22,26 +22,92 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   if ("IntersectionObserver" in window && sections.length) {
+    // Funkcja do aktualizacji aktywnego linku
+    const updateActiveLink = () => {
+      const scrollPosition = window.scrollY + getNavHeight() + 150;
+      const windowBottom = window.scrollY + window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      
+      let currentSection = sections[0]; // domyślnie Home
+      
+      // Dla ostatniej sekcji (Contact) - sprawdź czy jesteśmy blisko dołu strony
+      const lastSection = sections[sections.length - 1];
+      if (lastSection && lastSection.id === 'contact') {
+        const contactTop = lastSection.getBoundingClientRect().top + window.scrollY;
+        const contactHeight = lastSection.offsetHeight;
+        const contactBottom = contactTop + contactHeight;
+        
+        // Jeśli jesteśmy w ostatnich 300px strony LUB widzimy Contact na ekranie
+        if (windowBottom >= documentHeight - 300 || 
+            (window.scrollY >= contactTop - 200 && window.scrollY <= contactBottom)) {
+          currentSection = lastSection;
+        } else {
+          // Normalna logika dla innych sekcji
+          for (let i = sections.length - 1; i >= 0; i--) {
+            const section = sections[i];
+            const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+            
+            if (scrollPosition >= sectionTop) {
+              currentSection = section;
+              break;
+            }
+          }
+        }
+      } else {
+        // Normalna logika dla innych sekcji
+        for (let i = sections.length - 1; i >= 0; i--) {
+          const section = sections[i];
+          const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+          
+          if (scrollPosition >= sectionTop) {
+            currentSection = section;
+            break;
+          }
+        }
+      }
+      
+      // Aktualizuj klasy w nawigacji
+      navLinks.forEach((link) => {
+        const li = link.closest("li");
+        if (!li) return;
+        const href = link.getAttribute("href");
+        const sectionId = href === "#" ? "home" : href.substring(1);
+        
+        if (currentSection && currentSection.id === sectionId) {
+          li.classList.add("current");
+        } else {
+          li.classList.remove("current");
+        }
+      });
+    };
+    
+    // Obserwuj wszystkie sekcje
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          const id = entry.target.id;
-          navLinks.forEach((link) => {
-            const li = link.closest("li");
-            if (!li) return;
-            if (link.getAttribute("href") === `#${id}`) {
-              li.classList.add("current");
-            } else {
-              li.classList.remove("current");
-            }
-          });
-        });
+        updateActiveLink();
       },
-      { threshold: 0.6, rootMargin: `-${getNavHeight()}px 0px -35% 0px` }
+      { 
+        threshold: [0, 0.1, 0.5, 1],
+        rootMargin: `-${getNavHeight()}px 0px -50% 0px`
+      }
     );
 
     sections.forEach((section) => observer.observe(section));
+    
+    // Aktualizuj również podczas scrollowania
+    let ticking = false;
+    window.addEventListener("scroll", () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          updateActiveLink();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+    
+    // Ustaw początkową aktywną sekcję
+    updateActiveLink();
   }
 
   const zoomTargets = document.querySelectorAll("#interests img, .profile-pic");
